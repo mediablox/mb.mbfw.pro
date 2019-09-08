@@ -1,0 +1,22 @@
+{
+  "name": "mb.mbfw.pro",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mediablox/mb.mbfw.js.git"
+  },
+  "author": "Dean Morgan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mediablox/mb.mbfw.js/issues"
+  },
+  "homepage": "https://github.com/mediablox/mb.mbfw.js#readme",
+  "devDependencies": {
+    "release-it": "^12.3.6"
+  }
+}
