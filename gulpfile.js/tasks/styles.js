@@ -12,7 +12,9 @@ gulp.task('scss', function(done) {
 	gulp.src('./src/assets/scss/main.scss')
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
-		.pipe(sass().on('error', sass.logError))
+		.pipe(sass({
+      includePaths: ["node_modules/inuitcss", "node_modules/mb.mbfw.scss"]
+    }).on('error', sass.logError))
 		.pipe(postcss([autoprefixer()])) // uses ".browserslistrc"
 		.pipe(sourcemaps.write('.'))
 		.pipe(gulp.dest('./dist/assets/css'));
