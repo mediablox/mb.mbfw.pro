@@ -12,4 +12,4 @@ gulp.registry(forwardReference());
 requireDir('./tasks');
 
 // Declares the default task
-gulp.task('default', gulp.series('build', 'watch'));
+gulp.task('default', gulp.series('build', 'serve', 'watch'));
