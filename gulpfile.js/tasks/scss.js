@@ -6,14 +6,14 @@ var plumber = require('gulp-plumber');
 var postcss = require('gulp-postcss');
 var autoprefixer = require('autoprefixer');
 var sass = require('gulp-sass');
-
+var CONFIG = require('../config.js');
 
 gulp.task('scss', function(done) {
 	gulp.src('./src/assets/scss/main.scss')
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
 		.pipe(sass({
-      includePaths: ["node_modules/inuitcss", "node_modules/mb.mbfw.scss"]
+      includePaths: CONFIG.SCSS_PATHS
     }).on('error', sass.logError))
 		.pipe(postcss([autoprefixer()])) // uses ".browserslistrc"
 		.pipe(sourcemaps.write('.'))

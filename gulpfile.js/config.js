@@ -2,13 +2,8 @@
 
 module.exports = {
 
-  // Javascript
-  JS_BUNDLE_NAMESPACE: '__FOUNDATION_EXTERNAL__',
-
-  JS_FILES: [
-    'js/foundation.core.js',
-    'js/foundation.core.utils.js',
-    'js/foundation.util.*.js',
-    'js/*.js'
+  SCSS_PATHS: [
+    'node_modules/inuitcss',
+    'node_modules/mb.mbfw.scss'
   ],
 };
