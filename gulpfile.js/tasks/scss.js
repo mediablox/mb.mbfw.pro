@@ -20,5 +20,3 @@ gulp.task('scss', function(done) {
 		.pipe(gulp.dest('./dist/assets/css'));
 	done();
 });
-
-gulp.task('styles', gulp.series('scss'));
