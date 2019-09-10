@@ -9,14 +9,14 @@ var sass = require('gulp-sass');
 var CONFIG = require('../config.js');
 
 gulp.task('scss', function(done) {
-	gulp.src('./src/assets/scss/main.scss')
+	gulp.src(CONFIG.SCSS_SRC)
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
 		.pipe(sass({
-      includePaths: CONFIG.SCSS_PATHS
+      includePaths: CONFIG.SCSS_DEPS
     }).on('error', sass.logError))
 		.pipe(postcss([autoprefixer()])) // uses ".browserslistrc"
 		.pipe(sourcemaps.write('.'))
-		.pipe(gulp.dest('./dist/assets/css'));
+		.pipe(gulp.dest(CONFIG.SCSS_DEST));
 	done();
 });
