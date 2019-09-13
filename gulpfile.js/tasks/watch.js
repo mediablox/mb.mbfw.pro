@@ -32,6 +32,8 @@ gulp.task('reload', function(done) {
 });
 
 gulp.task('watch', function(done) {
-  gulp.watch('src/**/*.*').on('all', gulp.series('build', 'reload'));
+  gulp.watch('src/**/*.njk').on('all', gulp.series('html', 'reload'));
+  gulp.watch('src/**/*.scss').on('all', gulp.series('scss', 'reload'));
+  gulp.watch('src/**/*.js').on('all', gulp.series('javascript', 'reload'));
   done();
 });
