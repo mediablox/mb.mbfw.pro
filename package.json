@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "gulp"
+    "setup": "gulp setup",
+    "start": "gulp",
+    "build": "gulp build",
+    "styles": "gulp scss",
+    "js": "gulp javascript"
   },
   "repository": {
     "type": "git",
