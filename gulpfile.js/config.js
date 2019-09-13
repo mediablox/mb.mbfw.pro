@@ -1,6 +1,7 @@
 'use strict';
 
 module.exports = {
+
 	// HTML PATHS
 	HTML_PAGES: 'src/html/pages/**/*.{html,njk,nunjucks}',
 	HTML_PARTIALS: [
@@ -9,6 +10,7 @@ module.exports = {
 	],
 	HTML_DATA: 'src/data/data.json',
 	HTML_DIST: 'dist',
+
 	// SCSS PATHS
 	SCSS_SRC: 'src/assets/scss/main.scss',
 	SCSS_DEST: 'dist/assets/css',
@@ -16,4 +18,8 @@ module.exports = {
 		'node_modules/inuitcss',
 		'node_modules/mb.mbfw.scss'
 	],
+
+	// JS PATHS
+	JS_SRC: 'src/assets/js/main.js',
+	JS_DEST: 'dist/assets/js',
 };
