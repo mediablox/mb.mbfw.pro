@@ -15,8 +15,8 @@ module.exports = {
 	SCSS_SRC: 'src/assets/scss/main.scss',
 	SCSS_DEST: 'dist/assets/css',
 	SCSS_DEPS: [
-		'node_modules/inuitcss',
-		'node_modules/mb.mbfw.scss'
+		'node_modules/mb.mbfw.scss',
+		'node_modules/inuitcss'
 	],
 
 	// JS PATHS
