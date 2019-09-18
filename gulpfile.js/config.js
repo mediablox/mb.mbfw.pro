@@ -9,6 +9,10 @@ module.exports = {
 		'src/html/partials'
 	],
 	HTML_DATA: 'src/data/data.json',
+	HTML_SITE_DATA: 'src/data/site.json',
+	HTML_POST_DATA: 'src/data/posts.json',
+	HTML_COMMENT_DATA: 'src/data/comments.json',
+	HTML_PRODUCT_DATA: 'src/data/products.json',
 	HTML_DIST: 'dist',
 
 	// SCSS PATHS
