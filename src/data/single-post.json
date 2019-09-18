@@ -1,0 +1,22 @@
+{
+  "post": {
+    "ID": "00001",
+    "title": "My first post",
+    "date": "20/12/1983",
+    "post_type": "standard",
+    "link": "/link",
+    "author": {
+      "name": "Dean",
+      "path": "/path.to"
+    },
+    "get_thumbnail": "true",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    },
+    "get_preview": "This is the teaser preview",
+    "content": "This is the post content",
+    "comment_status": "not closed",
+    "comments": "true",
+    "comment": ["one","two","three"]
+  }
+}

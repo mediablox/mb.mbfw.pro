@@ -1,0 +1,63 @@
+{
+  "posts": [{
+    "ID": "00001",
+    "title": "My first post",
+    "date": "20/12/1983",
+    "post_type": "standard",
+    "link": "/link",
+    "author": {
+      "name": "Dean",
+      "path": "/path.to"
+    },
+    "get_thumbnail": "true",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    },
+    "preview": "This is the first teaser preview",
+    "content": "This is the first post content",
+    "comment_status": "not closed",
+    "comments": "true"
+  }, {
+    "ID": "00002",
+    "title": "My second post",
+    "date": "16/04/1994",
+    "post_type": "standard",
+    "link": "/link",
+    "author": {
+      "name": "Lauren",
+      "path": "/path.to"
+    },
+    "get_thumbnail": "true",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    },
+    "preview": "This is the second teaser preview",
+    "content": "This is the second post content",
+    "comment_status": "not closed",
+    "comments": "true"
+  }, {
+    "ID": "PRD001",
+    "title": "Product 1",
+    "post_type": "product",
+    "link": "/woo/single-product.html",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    }
+  }, {
+    "ID": "PRD002",
+    "title": "Product 2",
+    "post_type": "product",
+    "link": "/woo/single-product.html",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    }
+  }, {
+    "ID": "PRD003",
+    "title": "Product 3",
+    "post_type": "product",
+    "link": "/woo/single-product.html",
+    "thumbnail": {
+      "src": "http://via.placeholder.com/350x150"
+    }
+  }]
+}

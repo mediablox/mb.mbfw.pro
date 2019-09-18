@@ -1,0 +1,13 @@
+{
+  "site": {
+    "name": "mb.mbfw.pro",
+    "description": "A development framework for Static HTML and Wordpress projects",
+    "language_attributes": "en-gb",
+    "charset": "utf-8",
+    "theme": {
+      "link": ""
+    },
+    "pingback_url": ""
+  },
+  "wp_title": "mb.mbfw.pro"
+}
