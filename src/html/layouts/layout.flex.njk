@@ -1,0 +1,52 @@
+<!doctype html>
+<html class="no-js" lang="{{site.language_attributes}}">
+{% include "inc/meta.njk" %}
+{% include "inc/scripts-head.njk" %}
+<body class="o-layout {% if constrain %}o-layout--narrow {% endif %}{{body_class}}" data-template="layout.flex">
+{% include "inc/skip-to-content.njk" %}
+{% include "inc/browser-check.njk" %}
+
+	<!-- HEADER -->
+	<header id="header" class="o-layout__header">
+		{% block header %}{% include "layout/layout.header.njk" %}{% endblock %}
+	</header>
+	<!-- /HEADER -->
+
+	<div class="o-layout__body">
+		<!-- MAIN -->
+		<main id="main" role="main" class="o-layout__main">
+			{% block content %}
+			<p>No content has been added to this page yet</p>
+			{% endblock %}
+		</main>
+		<!-- /MAIN -->
+
+		{% if sidebarleft %}
+		<!-- SIDEBAR -->
+		<aside id="sidebar--left" class="o-layout__sidebar o-layout__sidebar--left">
+			{% block sidebarleft %}{% include "layout/layout.sidebar--left.njk" %}{% endblock %}
+		</aside>
+		<!-- SIDEBAR -->
+		{% endif %}
+
+		{% if sidebarright %}
+		<!-- SIDEBAR -->
+		<aside id="sidebar--right" class="o-layout__sidebar o-layout__sidebar--right">
+			{% block sidebarright %}{% include "layout/layout.sidebar--right.njk" %}{% endblock %}
+		</aside>
+		<!-- SIDEBAR -->
+		{% endif %}
+	</div>
+
+	<!-- FOOTER -->
+	<footer id="footer" class="o-layout__footer">
+		{% block footer %}{% include "layout/layout.footer.njk" %}{% endblock %}
+	</footer>
+	<!-- /FOOTER -->
+
+	{% block html_footer %}
+		{% include "inc/scripts-foot.njk" %}
+	{% endblock %}
+</body>
+
+</html>

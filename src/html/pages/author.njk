@@ -1,0 +1,12 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "" %}
+{% set sidebarright = "" %}
+{% set body_class = "l-layout--author" %}
+
+{% block content %}
+{% for post in posts %}
+{#% include ["tease-"~post.post_type~".njk", "tease.njk"] %#}
+{% include "components/tease.njk" %}
+{% endfor %}
+{% endblock %}
