@@ -35,5 +35,6 @@ gulp.task('watch', function(done) {
   gulp.watch('src/**/*.njk').on('all', gulp.series('html', 'reload'));
   gulp.watch('src/**/*.scss').on('all', gulp.series('scss', 'reload'));
   gulp.watch('src/**/*.js').on('all', gulp.series('javascript', 'reload'));
+  gulp.watch('src/assets/images/*.*').on('all', gulp.series('images', 'reload'));
   done();
 });

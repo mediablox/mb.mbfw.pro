@@ -41,6 +41,7 @@
     "undertaker-forward-reference": "^1.0.2"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.11.1",
     "mb.mbfw": "git+https://github.com/mediablox/mb.mbfw.git"
   }
 }
