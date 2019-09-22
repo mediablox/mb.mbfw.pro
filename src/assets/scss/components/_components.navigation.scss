@@ -1,0 +1,112 @@
+.c-navigation {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	list-style: none;
+	margin: 0;
+
+	&__item {
+		flex: 0 0 auto;
+		width: 100%;
+		// Enable megamenu and set to full width
+		&--megamenu {
+			.c-navigation__submenu {
+				left: 0;
+				right: 0;
+			}
+		}
+	}
+
+	// Hide the checkboxes from view on all devices
+	&__checkbox {
+		display: none;
+	}
+
+	// Set label to block element and if has a dropdown add a '+'
+	&__label {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: $spacing-unit--small;
+		// TODO: Look into using variables for icon class names so they can be set in config file
+		.fa-caret-down {
+			display: block;
+		}
+		.fa-caret-up {
+			display: none;
+		}
+	}
+
+	// Hide dropdown content
+	&__submenu {
+		display: none;
+		visibility: hidden;
+	}
+
+	@include mq($until: tablet) {
+		// For mobile users use checkbox state to toggle dropdown visibility
+		&__checkbox[type="checkbox"]:checked {
+			// Toggle icon on check
+			& ~ .c-navigation__label {
+				.fa-caret-down {
+					display: none;
+				}
+				.fa-caret-up {
+					display: block;
+				}
+			}
+			// Show menu on check
+			& ~ .c-navigation__submenu {
+				visibility: visible;
+				animation: fadein 0.3s;
+				display: block;
+			}
+		}
+	}
+
+	@include mq($from: tablet) {
+		// Set nav to horizontal for non-mobile users
+		flex-direction: row;
+		&__item {
+			width: fit-content;
+			position: relative;
+
+			// Hover to show sub-menus
+			&:hover .c-navigation__submenu {
+				display: flex;
+				visibility: visible;
+				animation: fadein 0.3s;
+			}
+
+			// Used to keep submenu items same width as parent
+			&--megamenu {
+				position: unset;
+			}
+		}
+
+		// Add left margin to submenu icon
+		.c-navigation__label {
+			.fas {
+				margin-left: $spacing-unit--tiny;
+			}
+		}
+
+		// For non-mobile users position absolutely
+		&__submenu {
+			position: absolute;
+			left: 0;
+			right: 0;
+		}
+	}
+}
+
+@keyframes fadein {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
