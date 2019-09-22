@@ -1,0 +1,31 @@
+.c-dropdown {
+	position: relative;
+	&__content {
+		display: none;
+		position: absolute;
+		visibility: hidden;
+		background-color: tone(white);
+		&--from-right {
+			right: 0;
+		}
+	}
+	@include mq($until: tablet) {
+		&__checkbox[type="checkbox"]:checked ~ .c-dropdown__content {
+			display: block;
+			visibility: visible;
+			animation: fadein 0.3s;
+		}
+	}
+
+	@include mq($from: tablet) {
+		&:hover .c-dropdown__content,
+		&:active .c-dropdown__content {
+			display: block;
+			visibility: visible;
+			animation: fadein 0.3s;
+		}
+	}
+	&__checkbox {
+		display: none;
+	}
+}
