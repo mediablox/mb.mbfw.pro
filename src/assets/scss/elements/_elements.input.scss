@@ -1,0 +1,44 @@
+input {
+	border-radius: 0.3rem;
+	border: 0.1rem solid tone(light-grey);
+	&:hover {
+		border: 0.1rem solid tone(medium-grey);
+	}
+	&:focus {
+		border: 0.1rem solid color(primary);
+	}
+}
+
+input.expand {
+	border: none;
+	&::placeholder {
+		color: tone(white);
+	}
+	~ label {
+		padding-left: 1rem;
+	}
+	width: 3rem;
+	&:focus {
+		animation: searchfade 0.3s;
+		border: 0.1rem solid color(primary);
+		color: tone(black);
+		width: 100%;
+		&::placeholder {
+			animation: searchfade 0.5s;
+			color: tone(medium-grey);
+		}
+	}
+}
+
+@keyframes searchfade {
+	from {
+		width: 1%;
+		color: tone(white);
+		border: none;
+	}
+	to {
+		width: 100%;
+		color: tone(medium-grey);
+		border: 0.1rem solid color(primary);
+	}
+}
