@@ -1,5 +1,66 @@
 .c-topbar {
-	&__content {
-		color: tone(white);
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+
+	// Hide all toggle checkboxes
+	&__checkbox {
+		display: none;
+	}
+
+	// Styling for message bar
+	&__message {
+		flex: 1 0 100%;
+		padding: $spacing-unit--tiny;
+		background-color: color(primary);
+	}
+
+	// Styling for navigation bar
+	&__navigation {
+		flex: 0 0 auto;
+		@include mq($from: tablet) {
+			width: 100%;
+		}
+		& .c-navigation {
+			display: none;
+			@include mq($from: tablet) {
+				display: flex;
+			}
+		}
+
+		// Show mobile menu when menu-icon toggle is checked
+		& .c-topbar__checkbox[type="checkbox"]:checked ~ .c-navigation {
+			@include mq($until: tablet) {
+				display: flex;
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 10rem;
+			}
+		}
+
+		// Hide toggle from tablet up
+		@include mq($from: tablet) {
+			.c-topbar__toggle {
+				display: none;
+			}
+		}
+		// Move menu to end of container from tablet up
+		@include mq($from: tablet) {
+			order: 1;
+		}
+	}
+
+	&__logo {
+		flex: 0 0 auto;
+	}
+	&__searchbox {
+		flex: 1 0 auto;
+	}
+	&__user-menu {
+		flex: 0 0 auto;
+	}
+	&__minicart {
+		flex: 0 0 auto;
 	}
 }

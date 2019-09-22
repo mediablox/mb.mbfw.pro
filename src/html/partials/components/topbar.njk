@@ -1,0 +1,52 @@
+<div class="c-topbar">
+	<div class="c-topbar__message">This is where the topbar message goes</div>
+
+	<div class="c-topbar__navigation">
+		<input class="c-topbar__checkbox" type="checkbox" id="navigation-toggle">
+		<label class="c-topbar__toggle" for="navigation-toggle">
+			<i class="fas fa-2x fa-bars u-color-primary"></i>
+		</label>
+		{% include "components/navigation.njk" %}
+	</div>
+
+	<div class="c-topbar__logo">
+		<div class="c-logo u-padding-small">
+			<img src="/assets/img/png/vv-logo.png">
+		</div>
+	</div>
+
+	<div class="c-topbar__searchbox u-padding-tiny">
+		<div class="c-searchbox o-flex o-flex--end o-flex--middle">
+			<input type="text" id="search-box" class="expand u-padding-tiny" placeholder="Enter your search term here">
+			<label for="search-box">
+				<i class="fas fa-2x fa-search u-color-primary"></i>
+			</label>
+		</div>
+	</div>
+
+	<div class="c-topbar__user-menu u-padding-tiny">
+		<div class="c-dropdown">
+			<i class="fas fa-2x fa-user-circle u-color-primary"></i>
+			<div class="c-dropdown__content c-dropdown__content--from-right">
+			<div class="u-padding-small">
+				Show Me When Clicked
+			</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="c-topbar__minicart u-padding-tiny">
+		<div class="c-dropdown">
+			<input class="c-dropdown__checkbox" type="checkbox" id="minicart-toggle">
+			<label class="c-dropdown__label" for="minicart-toggle">
+				<i class="fas fa-2x fa-shopping-basket u-color-primary"></i>
+			</label>
+			<div class="c-dropdown__content c-dropdown__content--from-right">
+				<div class="u-padding-small">
+					Show Me When Clicked
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
