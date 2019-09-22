@@ -1,0 +1,113 @@
+/* ==========================================================================
+   #BUTTONS
+   ========================================================================== */
+
+/**
+ * This is an example component. Extend inuitcss by building your own components
+ * that make up your UI. Component classes are prefixed with a `c-`.
+ */
+
+/**
+ * 1. Allow us to style box model properties.
+ * 2. Line different sized buttons up a little nicer.
+ * 3. Make buttons inherit font styles (often necessary when styling `input`s as
+ *    buttons).
+ * 4. Reset/normalize some styles.
+ * 5. Force all button-styled elements to appear clickable.
+ */
+
+$mb-btn-font: inherit !default;
+
+input[type=submit],
+button,
+.button,
+.c-button,
+.c-btn {
+	display: inline-block; /* [1] */
+	vertical-align: middle; /* [2] */
+	font: inherit; /* [3] */
+	font-family: $mb-btn-font;
+	text-align: center; /* [4] */
+	margin: 0; /* [4] */
+	cursor: pointer; /* [5] paddingunit--: $spacing-unit--small $spacing-unit;
+	transition: $global-transition;
+	border-radius: $global-radius;
+
+	/* Style variants
+   ========================================================================== */
+
+	// @each $name, $color in $color-palette {
+	// 	&.c-btn--#{$name} {
+	// 		color: color(white);
+	// 		background-color: $color;
+	// 		&,
+	// 		&:hover,
+	// 		&:active,
+	// 		&:focus {
+	// 			text-decoration: none; /* [4] */
+	// 		}
+
+	// 		&:hover,
+	// 		&:focus {
+	// 			background-color: darken($color, 10%);
+	// 		}
+	// 	}
+	// }
+}
+
+/* Size variants
+   ========================================================================== */
+
+.c-btn--small {
+	padding: $spacing-unit--tiny $spacing-unit--small;
+}
+
+.c-btn--large {
+	padding: $spacing-unit $spacing-unit--large;
+}
+
+/* Ghost buttons
+   ========================================================================== */
+
+/**
+ * Ghost buttons have see-through backgrounds and are bordered.
+ */
+
+$btn-ghost-border-width: 2px;
+
+.c-btn--ghost {
+	border: $btn-ghost-border-width solid currentColor;
+	padding: ($spacing-unit--small - $btn-ghost-border-width)
+		($spacing-unit - $btn-ghost-border-width);
+
+	&,
+	&:hover,
+	&:active,
+	&:focus {
+		background: none;
+	}
+
+	&.c-btn--small {
+		padding: ($spacing-unit--tiny - $btn-ghost-border-width)
+			($spacing-unit--small - $btn-ghost-border-width);
+	}
+
+	&.c-btn--large {
+		padding: ($spacing-unit - $btn-ghost-border-width)
+			($spacing-unit--large - $btn-ghost-border-width);
+	}
+
+	// @each $name, $color in $color-palette {
+	// 	&.c-btn--#{$name} {
+	// 		color: $color;
+	// 		background-color: initial;
+
+	// 		&:hover,
+	// 		&:focus {
+	// 			color: darken($color, 20%);
+	// 			border: $btn-ghost-border-width solid darken($color, 20%);
+	// 			background-color: initial;
+	// 		}
+	// 	}
+	// }
+}
