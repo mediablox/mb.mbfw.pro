@@ -2,7 +2,7 @@
 
 var gulp = require('gulp');
 
-gulp.task('copy-main-scss', function(done) {
+gulp.task('copy-mbfw-scss', function(done) {
 	gulp.src('./node_modules/mb.mbfw.scss/main.scss')
 		.pipe(gulp.dest('./src/assets/scss'));
 	gulp.src('./node_modules/mb.mbfw.scss/settings/_settings.global.scss')
@@ -14,4 +14,4 @@ gulp.task('copy-main-scss', function(done) {
 	done();
 });
 
-gulp.task('setup', gulp.series('copy-main-scss'));
+gulp.task('setup', gulp.series('copy-mbfw-scss'));
