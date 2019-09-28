@@ -35,13 +35,13 @@
     "gulp-sourcemaps": "^2.6.5",
     "gulp-uglify": "^3.0.2",
     "nunjucks": "^3.2.0",
-    "release-it": "^12.3.6",
+    "release-it": "^12.4.1",
     "require-dir": "^1.2.0",
     "rimraf": "^3.0.0",
     "undertaker-forward-reference": "^1.0.2"
   },
   "dependencies": {
-    "@fortawesome/fontawesome-free": "^5.11.1",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "mb.mbfw": "git+https://github.com/mediablox/mb.mbfw.git"
   }
 }
