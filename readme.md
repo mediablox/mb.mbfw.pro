@@ -76,6 +76,14 @@ The framework comprises of three core components, mbfw.scss, mbfw.js and mbfw.co
 
 Where possible, always try to adhere to the coding standards of the project. This may not be possible for some components, in which case you should at the very least wrap the component in container that can be specifically targetted.
 
+### Mediablox Styleguides
+
+- [CSS](https://github.com/mediablox/styleguides/tree/master/css)
+- [JS](https://github.com/mediablox/styleguides/blob/master/js)
+- [CSS in JS](https://github.com/mediablox/styleguides/blob/master/css-in-js)
+
+### Other Styleguides
+
 - [UI Philosophy: Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/)
 - [Naming Convention: B.E.M.](https://css-tricks.com/bem-101/)
 - [Architecture: ITCSS](https://github.com/inuitcss/inuitcss/blob/develop/README.md#css-directory-structure)
