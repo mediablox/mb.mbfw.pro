@@ -1,0 +1,44 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+<div class="u-padding-small">
+	<h1>mb.mbfw.pro</h1>
+	<h2>Label</h2>
+	<div class="c-label c-label--primary c-label--square">1</div>
+	<pre>
+		&lt;div class="c-label c-label--primary c-label--square"&gt;1&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--secondary c-label--circle">2</div>
+	<pre>
+		&lt;div class="c-label c-label--secondary c-label--circle"&gt;2&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--cta">New</div>
+	<pre>
+		&lt;div class="c-label c-label--cta"&gt;New&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--alert">Updated</div>
+	<pre>
+		&lt;div class="c-label c-label--alert"&gt;Updated&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--warning">Ready</div>
+	<pre>
+		&lt;div class="c-label c-label--warning"&gt;Ready&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--success">Steady</div>
+	<pre>
+		&lt;div class="c-label c-label--success"&gt;Steady&lt;/div&gt;
+	</pre>
+	<div class="c-label c-label--info">Go</div>
+	<pre>
+		&lt;div class="c-label c-label--info"&gt;Go&lt;/div&gt;
+	</pre>
+</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}

@@ -1,0 +1,72 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+<div class="u-padding-small">
+	<h1>mb.mbfw.pro</h1>
+	<h2>Alert</h2>
+	<div class="c-alert c-alert--alert">
+		<div class="c-alert__icon">
+			<i class="fas fa-exclamation-triangle fa-2x"></i>
+		</div>
+		<div class="c-alert__content">This is an alert notice</div>
+	</div>
+	<pre>
+		&lt;div class="c-alert c-alert--alert"&gt;
+			&lt;div class="c-alert__icon"&gt;
+				&lt;i class="fas fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+			&lt;/div&gt;
+			&lt;div class="c-alert__content"&gt;This is an alert notice&lt;/div&gt;
+		&lt;/div&gt;
+	</pre>
+	<div class="c-alert c-alert--warning">
+		<div class="c-alert__icon">
+			<i class="fas fa-exclamation-triangle fa-2x"></i>
+		</div>
+		<div class="c-alert__content">This is a warning notice</div>
+	</div>
+	<pre>
+		&lt;div class="c-alert c-alert--warning"&gt;
+			&lt;div class="c-alert__icon"&gt;
+				&lt;i class="fas fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+			&lt;/div&gt;
+			&lt;div class="c-alert__content"&gt;This is a warning notice&lt;/div&gt;
+		&lt;/div&gt;
+	</pre>
+	<div class="c-alert c-alert--success">
+		<div class="c-alert__icon">
+			<i class="fas fa-exclamation-triangle fa-2x"></i>
+		</div>
+		<div class="c-alert__content">This is a success notice</div>
+	</div>
+	<pre>
+		&lt;div class="c-alert c-alert--success"&gt;
+			&lt;div class="c-alert__icon"&gt;
+				&lt;i class="fas fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+			&lt;/div&gt;
+			&lt;div class="c-alert__content"&gt;This is a success notice&lt;/div&gt;
+		&lt;/div&gt;
+	</pre>
+	<div class="c-alert c-alert--info">
+		<div class="c-alert__icon">
+			<i class="fas fa-exclamation-triangle fa-2x"></i>
+		</div>
+		<div class="c-alert__content">This is an info notice</div>
+	</div>
+	<pre>
+		&lt;div class="c-alert c-alert--info"&gt;
+			&lt;div class="c-alert__icon"&gt;
+				&lt;i class="fas fa-exclamation-triangle fa-2x"&gt;&lt;/i&gt;
+			&lt;/div&gt;
+			&lt;div class="c-alert__content"&gt;This is an info notice&lt;/div&gt;
+		&lt;/div&gt;
+	</pre>
+</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}

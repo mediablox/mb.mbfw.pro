@@ -1,0 +1,50 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+<div class="u-padding-small">
+	<h1>mb.mbfw.pro</h1>
+	<h2>Badge</h2>
+	<div class="c-badge c-badge--primary c-badge--square">Badge Square</div>
+	<pre>
+		&lt;div class="c-badge c-badge--primary c-badge--square"&gt;Badge Square&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--secondary c-badge--circle">Badge Circle</div>
+	<pre>
+		&lt;div class="c-badge c-badge--secondary c-badge--circle"&gt;Badge Circle&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--cta">New</div>
+	<pre>
+		&lt;div class="c-badge c-badge--cta"&gt;New&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--alert">Updated</div>
+	<pre>
+		&lt;div class="c-badge c-badge--alert"&gt;Updated&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--warning">Ready</div>
+	<pre>
+		&lt;div class="c-badge c-badge--warning"&gt;Ready&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--success">Steady</div>
+	<pre>
+		&lt;div class="c-badge c-badge--success"&gt;Steady&lt;/div&gt;
+	</pre>
+
+	<div class="c-badge c-badge--info">Go</div>
+	<pre>
+		&lt;div class="c-badge c-badge--info"&gt;Go&lt;/div&gt;
+	</pre>
+</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}

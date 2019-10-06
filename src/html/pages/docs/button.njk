@@ -1,0 +1,28 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+<div class="u-padding-small">
+	<h1>mb.mbfw.pro</h1>
+	<h2>Button</h2>
+	<div class="c-btn c-btn--primary">Primary Button</div>
+	<pre>
+		&lt;div class="c-btn c-btn--primary"&gt;Primary Button&lt;/div&gt;
+	</pre>
+	<div class="c-btn c-btn--secondary">Seondary Button</div>
+	<pre>
+		&lt;div class="c-btn c-btn--secondary"&gt;Seondary Button&lt;/div&gt;
+	</pre>
+	<div class="c-btn c-btn--cta">CTA Button</div>
+	<pre>
+		&lt;div class="c-btn c-btn--cta"&gt;CTA Button&lt;/div&gt;
+	</pre>
+</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}
