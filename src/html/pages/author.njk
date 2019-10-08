@@ -7,6 +7,6 @@
 {% block content %}
 {% for post in posts %}
 {#% include ["tease-"~post.post_type~".njk", "tease.njk"] %#}
-{% include "components/tease.njk" %}
+{% include "components/tease-"~post.post_type~".njk" %}
 {% endfor %}
 {% endblock %}

@@ -3,7 +3,7 @@
     "ID": "00001",
     "title": "My first post",
     "date": "20/12/1983",
-    "post_type": "standard",
+    "post_type": "post",
     "link": "/link",
     "author": {
       "name": "Dean",
@@ -21,7 +21,7 @@
     "ID": "00002",
     "title": "My second post",
     "date": "16/04/1994",
-    "post_type": "standard",
+    "post_type": "post",
     "link": "/link",
     "author": {
       "name": "Lauren",
