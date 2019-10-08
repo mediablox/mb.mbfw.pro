@@ -1,0 +1,52 @@
+.c-navigation {
+	background-color: $color-light-grey;
+
+	&__menu {
+		display: none;
+	}
+
+	&:active,
+	&:hover {
+		& > .c-navigation__menu {
+			display: flex;
+		}
+	}
+
+	&__item {
+		&:hover,
+		&:active {
+			& > .c-navigation__menu--submenu {
+				display: flex;
+
+				.c-navigation__item {
+					background-color: $color-medium-grey;
+				}
+			}
+		}
+	}
+
+	&__menu--submenu {
+		display: none;
+	}
+
+	@include mq($from: desktop) {
+		&__toggle {
+			display: none;
+		}
+
+		& > .c-navigation__menu {
+			display: flex;
+		}
+
+		&__item {
+
+			&:hover,
+			&:active {
+				position: relative;
+				& .c-navigation__menu--submenu {
+					position: absolute;
+				}
+			}
+		}
+	}
+}
