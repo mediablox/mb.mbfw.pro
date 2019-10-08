@@ -1,18 +1,30 @@
 {
-  "comments": [{
-    "ID": "CMT001",
-    "comment_type": "parent",
-    "author": {
-      "name": "Dean"
+  "comments": [
+    {
+      "ID": "CMT001",
+      "comment_type": "parent",
+      "author": {
+        "name": "Dean"
+      },
+      "comment_content": "This is the first comment",
+      "children": [
+        {
+          "ID": "CLD001",
+          "comment_type": "child",
+          "author": {
+            "name": "Lacey"
+          },
+          "comment_content": "This is the first child comment"
+        }
+      ]
     },
-    "comment_content": "This is the first comment",
-    "children": ["one","two"]
-  },{
-    "ID": "CMT002",
-    "comment_type": "parent",
-    "author": {
-      "name": "Lauren"
-    },
-    "comment_content": "This is the second comment"
-  }]
+    {
+      "ID": "CMT002",
+      "comment_type": "parent",
+      "author": {
+        "name": "Lauren"
+      },
+      "comment_content": "This is the second comment"
+    }
+  ]
 }
