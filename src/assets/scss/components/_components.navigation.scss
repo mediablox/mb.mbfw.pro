@@ -1,8 +1,11 @@
 .c-navigation {
-	background-color: $color-light-grey;
+	position: relative;
 
 	&__menu {
+		position: absolute;
 		display: none;
+		flex-direction: column;
+		width: 100vw;
 	}
 
 	&:active,
@@ -12,14 +15,31 @@
 		}
 	}
 
+	&__expand {
+		i {
+			&:before {
+				content: "\f078";
+			}
+		}
+	}
+
 	&__item {
 		&:hover,
 		&:active {
 			& > .c-navigation__menu--submenu {
 				display: flex;
+				position: relative;
+				width: 100vw;
 
 				.c-navigation__item {
 					background-color: $color-medium-grey;
+				}
+			}
+			.c-navigation__expand {
+				i {
+					&:before {
+						content: "\f077";
+					}
 				}
 			}
 		}
@@ -35,7 +55,10 @@
 		}
 
 		& > .c-navigation__menu {
+			position: unset;
 			display: flex;
+			flex-direction: row;
+			width: fit-content;
 		}
 
 		&__item {
@@ -45,6 +68,8 @@
 				position: relative;
 				& .c-navigation__menu--submenu {
 					position: absolute;
+					top: 2rem;
+					width: max-content;
 				}
 			}
 		}
