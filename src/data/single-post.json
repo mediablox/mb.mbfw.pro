@@ -16,7 +16,6 @@
     "get_preview": "This is the teaser preview",
     "content": "This is the post content",
     "comment_status": "not closed",
-    "comments": "true",
-    "comment": ["one","two","three"]
+    "comments": "true"
   }
 }
