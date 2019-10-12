@@ -1,12 +1,21 @@
 'use strict';
 
 var gulp = require('gulp');
+var concat = require('gulp-concat');
+var CONFIG = require('../config.js');
 
-gulp.task('javascript', function(done) {
-	console.log("javascript:start");
 
-	console.log("javascript:done");
+gulp.task('bundle', function (done) {
+	gulp.src(CONFIG.JS_SRC)
+		.pipe(concat('main.js'))
+		.pipe(gulp.dest(CONFIG.JS_DEST));
 	done();
 });
 
-gulp.task('javascript', gulp.series('javascript'));
+gulp.task('libs', function (done) {
+	gulp.src(CONFIG.JS_LIBS)
+		.pipe(gulp.dest(CONFIG.JS_DEST));
+	done();
+});
+
+gulp.task('javascript', gulp.series('bundle','libs'));

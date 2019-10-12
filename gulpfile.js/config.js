@@ -27,6 +27,15 @@ module.exports = {
 	],
 
 	// JS PATHS
-	JS_SRC: 'src/assets/js/main.js',
+	JS_SRC: [
+		'node_modules/mb.mbfw/js/*.js',
+		'node_modules/mb.mbfw.components/**/*.js',
+		'src/assets/js/main.js'
+	],
+	JS_LIBS: [
+		'node_modules/jquery/dist/jquery.js',
+		'node_modules/scrolldir/dist/scrolldir.auto.js',
+		'node_modules/what-input/dist/what-input.js'
+	],
 	JS_DEST: 'dist/assets/js',
 };

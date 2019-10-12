@@ -42,6 +42,9 @@
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^5.11.1",
-    "mb.mbfw": "git+https://github.com/mediablox/mb.mbfw.git"
+    "jquery": "^3.4.1",
+    "mb.mbfw": "git+https://github.com/mediablox/mb.mbfw.git",
+    "scrolldir": "^1.5.0",
+    "what-input": "^5.2.6"
   }
 }
