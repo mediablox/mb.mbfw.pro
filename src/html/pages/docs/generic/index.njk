@@ -1,0 +1,36 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+	<div class="u-padding-small">
+		<h1>mb.mbfw.pro</h1>
+		<h2>Generic</h2>
+		<ul>
+			<li>
+				<strong>Box-sizing</strong> - Better default <code>box-sizing</code>.</li>
+			<li>
+				<strong>Normalize.css</strong> - A level playing field using @necolas’ Normalize.css.</li>
+			<li>
+				<strong>Reset</strong> - A tiny reset to complement Normalize.css.</li>
+			<li>
+				<strong>Shared</strong> - Sensibly and tersely share some global commonalities (particularly useful when managing vertical rhythm).</li>
+		</ul>
+		<h2>Box-sizing</h2>
+		<p>More sensible default box-sizing:
+<a href="https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice" rel="nofollow">https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice</a>
+		</p>
+		<h2>Normalize.css</h2>
+		<p>Normalize.css makes browsers render all elements more consistently and in line with modern standards. It precisely targets only the styles that need normalizing.</p>
+		<h2>Reset</h2>
+		<p>A very simple reset that sits on top of Normalize.css.</p>
+		<h2>Shared</h2>
+		<p>Shared declarations for certain elements.</p>
+	</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}

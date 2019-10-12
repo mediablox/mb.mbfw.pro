@@ -8,9 +8,397 @@
 	<div class="u-padding-small">
 		<h1>mb.mbfw.pro</h1>
 		<h2>Objects</h2>
-	</div>
+		<ul>
+			<li>
+				<strong>Wrapper</strong> - Page constraint object.</li>
+			<li>
+				<strong>Layout</strong> - Generic layout module.</li>
+			<li>
+				<strong>Media</strong> - Image- and text-like content side by side. The poster-child of OOCSS.</li>
+			<li>
+				<strong>Flag</strong> - Table-layout-based advancement on the Media object.</li>
+			<li>
+				<strong>List-bare</strong> - Lists with no bullets or indents.</li>
+			<li>
+				<strong>List-inline</strong> - A list whose items all site in a line.</li>
+			<li>
+				<strong>Box</strong> - Simple boxing abstraction.</li>
+			<li>
+				<strong>Block</strong> - Image-on-top-of-text object.</li>
+			<li>
+				<strong>Ratio</strong> - A container for maintaining aspect ratio of content.</li>
+			<li>
+				<strong>Crop</strong> - Provide a cropping context for media (images, etc.).</li>
+			<li>
+				<strong>Table</strong> - Classes for manipulating <code>table</code>s.</li>
+			<li>
+				<strong>Pack</strong> - Pack items into available horizontal space.</li>
+		</ul>
+		<h2>Wrapper</h2>
+	<p>Page-level constraining and wrapping elements.</p>
+	<h2>Layout</h2>
+	<h3>Grid-like layout system.</h3>
+	<p>The layout object provides us with a page layout system including header, footer and sidebars, for example:</p>
+	<pre><code>  &lt;body class="o-layout"&gt;
+        &lt;div class="o-layout__header&gt;
+        &lt;/div&gt;
+        &lt;div class="o-layout__body"&gt;
+            &lt;div class="o-layout__main"&gt;
+            &lt;/div&gt;
+                &lt;div class="o-layout__sidebar o-layout__sidebar--left"&gt;
+            &lt;/div&gt;
+                &lt;div class="o-layout__sidebar o-layout__sidebar--right"&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        &lt;div class="o-layout__footer&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
+	<p>The above will create a three-column structure in which each sidebar will maintain a static width with the main
+    section filling the remaing space. The layout is responsive and will move sidebars to below main section at smaller
+    widths.</p>
+	<h2>Flex</h2>
+	<p>Flex based grid-like layout system.</p>
+	<p>The flex object provides us with a column-style layout system. This file contains the basic structural elements, but
+    classes should be complemented with width utilities, for example:</p>
+	<pre><code>  &lt;div class="o-flex"&gt;
+        &lt;div class="o-flex__item u-1/2"&gt;
+        &lt;/div&gt;
+        &lt;div class="o-flex__item u-1/2"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
+	<p>The above will create a two-column structure in which each column will fluidly fill half of the width of the parent.
+    We can have more complex systems:</p>
+	<pre><code>  &lt;div class="o-flex"&gt;
+        &lt;div class="o-flex__item u-1/1 u-1/3@medium"&gt;
+        &lt;/div&gt;
+        &lt;div class="o-flex__item u-1/2 u-1/3@medium"&gt;
+        &lt;/div&gt;
+        &lt;div class="o-flex__item u-1/2 u-1/3@medium"&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    </code></pre>
+	<p>The above will create a system in which the first item will be 100% width until we enter our medium breakpoint, when
+    it will become 33.333% width. The second and third items will be 50% of their parent, until they also become 33.333%
+    width at the medium breakpoint.</p>
+	<h3>Directional Modifier Classes</h3>
+	<p>We can also manipulate entire layout systems by adding a series of modifiers to the <code>.o-flex</code> block. For
+    example:</p>
+	<pre><code>  &lt;div class="o-flex o-flex--[row-reverse|column|column-reverse]"&gt;
+    </code></pre>
+	<p>
+		<code>o-flex--row-reverse</code> will reverse the displayed order of the system so that it runs in the opposite order
+    to our source, effectively flipping the system over.</p>
+	<p>
+		<code>o-flex--column</code> will change the direction so that the elements are stacked atop of each other in a single
+    column.</p>
+	<p>
+		<code>o-flex--column-reverse</code> is a combination of both <code>o-flex--row-reverse</code> and
+    <code>o-flex--column</code> which stacks the items in a singular column, but in reverse order.</p>
+	<h4>Wrapper Modifier Classes</h4>
+	<p>By default, <code>o-flex__item</code>'s will stay in a single row. If the width of the items is greater than the size
+    of the container, they will forceably increase the size of the container. However, you can apply
+    <code>o-flex--wrap</code> or <code>o-flex--wrap-reverse</code>.</p>
+	<pre><code>  &lt;div class="o-flex o-flex--[wrap|wrap-reverse]"&gt;
+    </code></pre>
+	<h3>Layout Modifier Classes</h3>
+	<p>You can also control the layout behaviour of the container using the following modifier classes.</p>
+	<pre><code>  &lt;div class="o-flex o-flex--[start|end|center|space-between|space-around|space-evenly]"&gt;
+    </code></pre>
+	<ul>
+		<li>
+			<code>start</code> - (default) Items are packed toward the start of the flex-direction.</li>
+		<li>
+			<code>end</code> - Items are packed toward the end of the flex-direction.</li>
+		<li>
+			<code>center</code> - Items are centered along the line.</li>
+		<li>
+			<code>space-between</code> - Items are evenly distributed in the line; first item is on the start line, last
+        item on the end line.</li>
+		<li>
+			<code>space-around</code> - Items are evenly distributed in the line with equal space around them. Note that
+        visually the spaces aren't equal, since all the items have equal space on both sides. The first item will have
+        one unit of space against the container edge, but two units of space between the next item because that next
+        item has its own spacing that applies.</li>
+		<li>
+			<code>space-evenly</code> - Items are distributed so that the spacing between any two items (and the space to
+        the edges) is equal.</li>
+	</ul>
+	<pre><code>  &lt;div class="o-flex o-flex--[top|bottom|middle|stretch|baseline]"&gt;
+    </code></pre>
+	<ul>
+		<li>
+			<code>top</code> - Items are placed at the start of the cross axis.</li>
+		<li>
+			<code>bottom</code> - Items are placed at the end of the cross axis.</li>
+		<li>
+			<code>middle</code> - Items are centered in the cross-axis</li>
+		<li>
+			<code>stretch</code> - Items are stretched to fill the container</li>
+		<li>
+			<code>baseline</code> - Items are aligned such as their baselines align</li>
+	</ul>
+	<h3>Flex Item Modifier Classes</h3>
+	<p>There are also some modifier classes available to flex items. Let's take a look at some of these below;</p>
+	<h5>Grow / Shrink Modifier Classes</h5>
+	<ul>
+		<li>
+			<code>grow</code> -</li>
+		<li>
+			<code>grow-x2</code> -</li>
+		<li>
+			<code>grow-x3</code> -</li>
+		<li>
+			<code>shrink</code> -</li>
+		<li>
+			<code>shrink-x2</code> -</li>
+		<li>
+			<code>shrink-x3</code> -</li>
+	</ul>
+	<h5>Alignment Modifier Classes</h5>
+	<ul>
+		<li>
+			<code>align-start</code> -</li>
+		<li>
+			<code>align-end</code> -</li>
+		<li>
+			<code>align-center</code> -</li>
+		<li>
+			<code>align-baseline</code> -</li>
+		<li>
+			<code>align-stretch</code> -</li>
+	</ul>
+	<h2>Media</h2>
+	<p>Place any image- and text-like content side-by-side, as per:
+    <a href="http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code"
+        rel="nofollow">http://www.stubbornella.org/content/2010/06/25/the-media-object-saves-hundreds-of-lines-of-code</a>
+	</p>
+	<p>Example:</p>
+	<pre><code>&lt;div class="o-media"&gt;
+        &lt;div class="o-media__img"&gt;
+            &lt;img src="path-to-img.png"&gt;
+        &lt;/div&gt;
+        &lt;div class="o-media__body"&gt;
+            Text to run aside the image.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+	<h2>Flag</h2>
+	<p>The flag object is a design pattern similar to the media object, however it utilises
+    <code>display: table[-cell];</code> to give us control over the vertical alignments of the text and image.</p>
+	<p>
+		<a href="http://csswizardry.com/2013/05/the-flag-object/"
+        rel="nofollow">http://csswizardry.com/2013/05/the-flag-object/</a>
+	</p>
+	<pre><code>&lt;div class="o-flag"&gt;
+        &lt;div class="o-flag__img"&gt;
+            &lt;img src="path-to-img.png"&gt;
+        &lt;/div&gt;
+        &lt;div class="o-flag__body"&gt;
+            Text to run aside the image.
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+	<p>The <code>flag</code> object also has a selection of modifier classes available. These are as follows;</p>
+	<h5>Size Variants</h5>
+	<ul>
+		<li>
+			<code>o-flag--flush</code> - Zero padding or margins between the flag and body.</li>
+		<li>
+			<code>o-flag--tiny</code> - Tiny padding or margins between the flag and body.</li>
+		<li>
+			<code>o-flag--small</code> - Small padding or margins between the flag and body.</li>
+		<li>
+			<code>o-flag--large</code> - Large padding or margins between the flag and body.</li>
+		<li>
+			<code>o-flag--huge</code> - Huge padding or margins between the flag and body.</li>
+	</ul>
+	<h5>Alignent Variants</h5>
+	<ul>
+		<li>
+			<code>o-flag--top</code> - Vertically align the image- and body-content from the top.</li>
+		<li>
+			<code>o-flag--bottom</code> - Vertically align the image- and body-content from the bottom.</li>
+	</ul>
+	<h5>Directional Variants</h5>
+	<ul>
+		<li>
+			<code>o-flag--reverse</code> - Swap the rendered direction of the object.</li>
+	</ul>
+	<h2>List-bare</h2>
+	<p>Strip list-like appearance from lists by removing their bullets and any indentation.</p>
+	<p>Note: Declaring the item class might not be necessary everywhere, but is for example in <code>&lt;dl&gt;</code> lists
+    for the <code>&lt;dd&gt;</code> children.</p>
+	<p>Example:</p>
+	<pre><code>&lt;ul class="o-list-bare"&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    </code></pre>
+	<h2>List-inline</h2>
+	<p>The list-inline object simply displays a list of items in one line.</p>
+	<p>Example:</p>
+	<pre><code>&lt;ul class="o-list-bare"&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+        &lt;li class="o-list-bare__item"&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+    </code></pre>
+	<h2>Box</h2>
+	<p>The box object simply boxes off content. Extend with cosmetic styles in the Components layer.</p>
+	<h2>Block</h2>
+	<p>Stacked image-with-text object. A simple abstraction to cover a very commonly occurring design pattern.</p>
+	<h2>Ratio</h2>
+	<p>Create ratio-bound content blocks, to keep media (e.g. images, videos) in their correct aspect ratios.</p>
+	<p>
+		<a href="http://alistapart.com/article/creating-intrinsic-ratios-for-video"
+        rel="nofollow">http://alistapart.com/article/creating-intrinsic-ratios-for-video</a>
+	</p>
+	<ul>
+		<li>Default is a 1:1 ratio (i.e. a perfect square).</li>
+	</ul>
+	<pre><code>&lt;div class="o-ratio"&gt;
+        &lt;div class="o-ratio__content"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+	<p>There are also a series of ratio modifier classes that are automatically generated based on the settings defined on
+    <code>_settings.config.scss</code> which can be used like so:</p>
+	<pre><code>&lt;div class="o-ratio o-ratio--golden-ratio"&gt;
+    </code></pre>
+	<p>In addition to these, there is one final modifier which is for use with image content which constrains the image to
+    the boundaries, without cropping or stretching it.</p>
+	<pre><code>&lt;div class="o-ratio o-ratio--img-contain"&gt;
+    </code></pre>
+	<h2>Crop</h2>
+	<p>Provide a cropping container in order to display media (usually images) cropped to certain ratios.</p>
+	<p>Example:</p>
+	<pre><code>&lt;div class="o-crop"&gt;
+        &lt;div class="o-crop__content"&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+	<p>Using additional modifiers we can control the behaviour of the cropping;</p>
+	<ul>
+		<li>
+			<code>--left-top</code>
+		</li>
+		<li>
+			<code>--left-center</code>
+		</li>
+		<li>
+			<code>--left-bottom</code>
+		</li>
+		<li>
+			<code>--right-top</code>
+		</li>
+		<li>
+			<code>--right-center</code>
+		</li>
+		<li>
+			<code>--right-bottom</code>
+		</li>
+		<li>
+			<code>--center-top</code>
+		</li>
+		<li>
+			<code>--center</code>
+		</li>
+		<li>
+			<code>--center-center</code>
+		</li>
+		<li>
+			<code>--center-bottom</code>
+		</li>
+	</ul>
+	<p>A final modifier is available to stretch content to fill it's container while maintaining aspect-ratio.</p>
+	<pre><code>&lt;div class="o-crop o-crop--fill"&gt;
+    </code></pre>
+	<h2>Table</h2>
+	<p>A simple object for manipulating the structure of HTML <code>table</code>s.</p>
+	<pre><code>&lt;table class="o-table"&gt;
+        &lt;tr&gt;
+            &lt;td&gt;&lt;/td&gt;
+            &lt;td&gt;&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/table&gt;
+    </code></pre>
+	<h3>Equal-width table cells</h3>
+	<p>
+		<code>o-table--fixed</code> forces all cells within a table to occupy the same width as each other. This also has
+    performance benefits: because the browser does not need to (re)calculate cell dimensions based on content it
+    discovers, the table can be rendered very quickly. Further reading:</p>
+	<p>
+		<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values"
+        rel="nofollow">https://developer.mozilla.org/en-US/docs/Web/CSS/table-layout#Values</a>
+	</p>
+	<h3>Size Variants</h3>
+	<ul>
+		<li>
+			<code>o-table--tiny</code>
+		</li>
+		<li>
+			<code>o-table--small</code>
+		</li>
+		<li>
+			<code>o-table--large</code>
+		</li>
+		<li>
+			<code>o-table--huge</code>
+		</li>
+	</ul>
+	<h2>Pack</h2>
+	<p>The pack object simply causes any number of elements pack up horizontally to automatically fill an equal, fluid width
+    of their parent.</p>
+	<pre><code>&lt;div class="o-pack"&gt;
+        &lt;div class="o-pack__item"&gt;&lt;/div&gt;
+        &lt;div class="o-pack__item"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    </code></pre>
+	<h3>Vertical Alignment Modifiers</h3>
+	<ul>
+		<li>
+			<code>o-pack--middle</code>
+		</li>
+		<li>
+			<code>o-pack--bottom</code>
+		</li>
+	</ul>
+	<h3>Unequal-width items</h3>
+	<ul>
+		<li>
+			<code>o-pack--auto</code>
+		</li>
+	</ul>
+	<h3>Size Variants</h3>
+	<ul>
+		<li>
+			<code>o-pack--tiny</code>
+		</li>
+		<li>
+			<code>o-pack--small</code>
+		</li>
+		<li>
+			<code>o-pack--default</code>
+		</li>
+		<li>
+			<code>o-pack--large</code>
+		</li>
+		<li>
+			<code>o-pack--huge</code>
+		</li>
+	</ul>
+	<h3>Reversed order packs</h3>
+	<ul>
+		<li>
+			<code>o-pack--reverse</code>
+		</li>
+	</ul>
+</div>
 {% endblock %}
 
 {% block sidebarleft %}
-	{% include "components/docs/sidebar.njk" %}
+{% include "components/docs/sidebar.njk" %}
 {% endblock %}

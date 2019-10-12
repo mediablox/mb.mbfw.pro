@@ -1,0 +1,59 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+	<div class="u-padding-small">
+		<h1>mb.mbfw.pro</h1>
+		<h2>Settings</h2>
+		<ul>
+			<li>Font-size - A mixin which guarantees baseline-friendly line-heights.</li>
+			<li>Clearfix - Micro clearfix mixin.</li>
+			<li>Hidden - Mixin for hiding elements.</li>
+			<li>Sass MQ - inuitcss’ default media query manager.</li>
+			<li>Aliases - Redeclare long, complex variables with shorter names.</li>
+		</ul>
+		<h2>Font-size</h2>
+		<p>Generates a rem font-size (with pixel fallback) and a baseline-compatible
+    unitless line-height from a pixel font-size value. Basic usage is simply:</p>
+		<pre><code>  @include inuit-font-size(18px);
+    </code></pre>
+		<p>You can force a specific line-height by passing it as the second argument:</p>
+		<pre><code>  @include inuit-font-size(16px, 1);
+    </code></pre>
+		<p>You can also modify the line-height by increments, while staying in the
+    baseline grid, by setting the <code>$modifier</code> parameter. It takes a positive
+    or negative integer, and it will add or remove "lines" to the generated
+    line-height. This is the recomended way to do it, unless you really need
+    an absolute value. i.e.:</p>
+		<pre><code>  // add 2 lines:
+      @include inuit-font-size(24px, $modifier: +2);
+    </code></pre>
+		<pre><code>  // subtract 1 line:
+      @include inuit-font-size(24px, $modifier: -1);
+    </code></pre>
+		<h2>Clearfix</h2>
+		<p>Mixin to drop micro clearfix into a selector. Further reading:
+    <a href="http://www.cssmojo.com/the-very-latest-clearfix-reloaded/"
+        rel="nofollow">http://www.cssmojo.com/the-very-latest-clearfix-reloaded/</a>
+		</p>
+		<pre><code>.usage {
+      @include inuit-clearfix();
+    }
+    </code></pre>
+		<h2>Hidden</h2>
+		<p>Mixin to quickly apply accessible hiding to elements.</p>
+		<h2>Sass MQ</h2>
+		<p>Foe sass-mq documentation visit the sass-mq site at:
+    <a href="https://github.com/sass-mq/sass-mq">https://github.com/sass-mq/sass-mq</a>
+		</p>
+		<h2>Aliases</h2>
+		<p>Declare shorthand aliases to rename some of the longer variable names set by inuitcss</p>
+	</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}

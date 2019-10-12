@@ -1,0 +1,36 @@
+{% extends "layout.flex.njk" %}
+{% set constrain = "" %}
+{% set sidebarleft = "1" %}
+{% set sidebarright = "" %}
+{% set body_class = "o-layout--home" %}
+
+{% block content %}
+	<div class="u-padding-small">
+		<h1>mb.mbfw.pro</h1>
+		<h2>Elements</h2>
+		<ul>
+			<li>
+				<strong>Page</strong> - Set up our document’s default <code>font-size</code> and <code>line-height</code>.</li>
+			<li>
+				<strong>Headings</strong> - Very minimal (i.e. only font-size information) for headings 1 through 6.</li>
+			<li>
+				<strong>Images</strong> - Base image styles.</li>
+			<li>
+				<strong>Tables</strong> - Simple table styles.</li>
+		</ul>
+		<h2>Page</h2>
+		<p>Simple page-level setup.</p>
+		<h2>Headings</h2>
+		<p>Simple default styles for headings 1 through 6. Anything more opinionated than simple font-size changes should likely be applied via classes see:
+<a href="http://csswizardry.com/2016/02/managing-typography-on-large-apps/" rel="nofollow">http://csswizardry.com/2016/02/managing-typography-on-large-apps/</a>
+		</p>
+		<h2>Images</h2>
+		<p>Simple default styles for images that allow the to be fluid by default for better responsive behaviour amongst other things.</p>
+		<h2>Tables</h2>
+		<p>Basic styles that ensure tables fill up as much space as possible.</p>
+	</div>
+{% endblock %}
+
+{% block sidebarleft %}
+	{% include "components/docs/sidebar.njk" %}
+{% endblock %}
