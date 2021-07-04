@@ -1,3 +1,19 @@
-<!--[if lte IE 9]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
-<![endif]-->
+<script>
+window.onload = function msieversion() {
+
+    var ua = window.navigator.userAgent;
+    var msie = ua.indexOf("MSIE ");
+
+    if (msie > 0 || !!navigator.userAgent.match(/Trident.*rv\:11\./))  // If Internet Explorer, return version number
+    {
+      console.log("is ie");
+      document.getElementById("iecheck").style.display = "block";
+    } else {
+      console.log("not ie");
+    }
+
+    return false;
+}
+</script>
+
+<p id="iecheck" style="display:none;">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
